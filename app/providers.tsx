@@ -1,5 +1,6 @@
 "use client";
 
+import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/theme-provider";
 import { ReactNode } from "react";
 
@@ -10,6 +11,7 @@ type Props = {
 const Providers = ({ children }: Props) => {
   return (
     <>
+    <Toaster />
       <ThemeProvider
         attribute="class"
         defaultTheme="system"

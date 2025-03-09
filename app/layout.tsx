@@ -3,6 +3,7 @@ import { Overpass } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import Providers from "./providers";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const overpass = Overpass({
   variable: "--font-overpass",
@@ -27,13 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${overpass.variable} antialiased`}>
-        <Providers>
-          <Navbar />
-          <main className="container py-10">{children}</main>
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${overpass.variable} antialiased`}>
+          <Providers>
+            <Navbar />
+            <main className="container py-10">{children}</main>
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
