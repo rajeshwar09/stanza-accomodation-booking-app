@@ -2,13 +2,9 @@ import React from "react";
 import FormContainer from "@/components/form/form-container";
 import FormInput from "@/components/form/form-input";
 import SubmitButton from "@/components/form/button";
+import { createProfileAction } from "@/utils/actions";
 
-const createProfileAction = async (prevState: unknown, formData: FormData) => {
-  "use server";
-  const firstName = formData.get("firstName") as string;
-  if (firstName !== "Raje") return { message: "There was an error..." };
-  return { message: "Profile Created" };
-};
+
 
 const CreateProfilePage = () => {
   return (
