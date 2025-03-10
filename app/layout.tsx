@@ -33,7 +33,7 @@ export default function RootLayout({
         <body className={`${overpass.variable} antialiased`}>
           <Providers>
             <Navbar />
-            <main className="container py-10">{children}</main>
+            <main className="py-10 ">{children}</main>
           </Providers>
         </body>
       </html>
