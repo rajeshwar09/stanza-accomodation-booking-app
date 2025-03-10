@@ -14,7 +14,7 @@ const FormInput = (props: FormInputProps) => {
   const { name, type, label, defaultValue, placeholder } = props;
   return (
     <div className="mb-2">
-      <Label htmlFor={name} className="capitalize">
+      <Label htmlFor={name} className="capitalize py-2">
         {label || name}
       </Label>
       <Input
