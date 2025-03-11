@@ -7,7 +7,7 @@ const ImageInput = () => {
 
   return (
     <div className="mb-2">
-      <Label htmlFor={name} className="capitalize">
+      <Label htmlFor={name} className="capitalize py-2">
         Image
       </Label>
       <Input

@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${overpass.variable} sm:mx-32 antialiased`}>
+        <body className={`${overpass.variable} sm:mx-32 lg:mx-60 antialiased`}>
           <Providers>
             <Navbar />
             <main className="py-10 ">{children}</main>
