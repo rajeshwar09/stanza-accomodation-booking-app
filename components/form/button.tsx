@@ -4,12 +4,15 @@ import { IoReload } from "react-icons/io5";
 import { useFormStatus } from "react-dom";
 import { Button } from "../ui/button";
 
+type btnSize = 'default' | 'lg' | 'sm'
+
 type SubmitButtonProps = {
   className?: string;
   text?: string;
+  size?: btnSize;
 };
 
-const SubmitButton = ({ className = "", text = "" }: SubmitButtonProps) => {
+const SubmitButton = ({ className = "", text = "", size = 'lg' }: SubmitButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
@@ -17,7 +20,7 @@ const SubmitButton = ({ className = "", text = "" }: SubmitButtonProps) => {
       type="submit"
       disabled={pending}
       className={`capitalize ${className}`}
-      size="lg"
+      size={size}
     >
       {pending ? (
         <>
