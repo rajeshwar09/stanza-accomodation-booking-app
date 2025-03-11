@@ -40,7 +40,7 @@ const CreatePropertyPage = () => {
             <ImageInput />
           </div>
           <TextAreaInput
-            name="Description"
+            name="description"
             labelText="Description (10-1000 Words"
           />
           <h3 className="text-lg mt-8 mb-4 font-medium">

@@ -13,14 +13,14 @@ type CategoriesInputProps = {
   defaultValue?: string;
 };
 
+const name = "category";
 const CategoriesInput = ({ defaultValue }: CategoriesInputProps) => {
-  const name = "catgory";
   return (
     <div className="mb-2">
       <Label htmlFor={name} className="capitalize py-2">
         Categories
       </Label>
-      <Select defaultValue={defaultValue || categories[0].label}>
+      <Select defaultValue={defaultValue || categories[0].label} name={name} required>
         <SelectTrigger id={name} className="w-full">
           <SelectValue />
         </SelectTrigger>
