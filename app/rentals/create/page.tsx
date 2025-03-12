@@ -1,5 +1,5 @@
 import AmenitiesInput from "@/components/form/amenities-input";
-import SubmitButton from "@/components/form/button";
+import SubmitButton from "@/components/form/buttons";
 import CategoriesInput from "@/components/form/categories-input";
 import CounterInput from "@/components/form/counter-input";
 import CountriesInput from "@/components/form/countries-input";

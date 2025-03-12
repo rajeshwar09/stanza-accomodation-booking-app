@@ -1,7 +1,7 @@
 import React from "react";
 import FormContainer from "@/components/form/form-container";
 import FormInput from "@/components/form/form-input";
-import SubmitButton from "@/components/form/button";
+import SubmitButton from "@/components/form/buttons";
 import { createProfileAction } from "@/utils/actions";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";

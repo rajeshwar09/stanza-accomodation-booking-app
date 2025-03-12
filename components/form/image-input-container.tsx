@@ -6,7 +6,7 @@ import { LuUser } from "react-icons/lu";
 import { Button } from "../ui/button";
 import FormContainer from "./form-container";
 import ImageInput from "./image-input";
-import SubmitButton from "./button";
+import SubmitButton from "./buttons";
 
 type ImageInputContainerProps = {
   image: string;
