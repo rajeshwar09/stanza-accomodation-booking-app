@@ -144,7 +144,7 @@ export const createPropertyAction = async (
   const user = await getAuthUser();
   try {
     const rawData = Object.fromEntries(formData);
-    const file = formData.get('image') as File;
+    const file = formData.get("image") as File;
 
     const validatedFields = validateWithZodSchema(propertySchema, rawData);
     const validatedFile = validateWithZodSchema(imageSchema, { image: file });
@@ -160,5 +160,36 @@ export const createPropertyAction = async (
   } catch (error) {
     return renderError(error);
   }
-  redirect('/');
+  redirect("/");
+};
+
+// Fetch Properties
+export const fetchProperties = async ({
+  search = '',
+  category,
+}: {
+  search?: string;
+  category?: string;
+}) => {
+  const properties = await db.property.findMany({
+    where: {
+category: category,
+OR: [
+  {name: {contains: search, mode: 'insensitive'}},
+  {tagline: {contains: search, mode: 'insensitive'}},
+]
+    },
+    select: {
+      id: true,
+      name: true,
+      tagline: true,
+      country: true,
+      price: true,
+      image: true,
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
+  return properties
 };
