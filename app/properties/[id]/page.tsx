@@ -1,10 +1,14 @@
 import FavoriteToggleButton from "@/components/card/favorite-toggle-button";
 import PropertyRating from "@/components/card/property-rating";
+import Amenities from "@/components/properties/amenities";
 import BookingCalendar from "@/components/properties/booking/booking-calendar";
 import BreadCrumbs from "@/components/properties/bread-crumbs";
+import Description from "@/components/properties/description";
 import ImageContainer from "@/components/properties/image-container";
 import PropertyDetails from "@/components/properties/property-details";
 import ShareButton from "@/components/properties/share-button";
+import UserInfo from "@/components/properties/user-info";
+import { Separator } from "@/components/ui/separator";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
 
@@ -13,6 +17,8 @@ const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
   if (!property) redirect("/");
   const { bedrooms, baths, guests, beds } = property;
   const details = { bedrooms, baths, guests, beds };
+  const firstName = property.profile.firstName;
+  const profileImage = property.profile.profileImage;
 
   return (
     <section>
@@ -32,6 +38,10 @@ const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
             <PropertyRating inPage propertyId={property.id} />
           </div>
           <PropertyDetails details={details} />
+          <UserInfo profile={{ profileImage, firstName }} />
+          <Separator className="mt-4" />
+          <Description description={property.description} />
+          <Amenities amenities={property.amenities} />
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
