@@ -58,7 +58,7 @@ export const CardSignInButton = () => {
 export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
   const { pending } = useFormStatus();
   return (
-    <Button>
+    <Button variant="outline">
       {pending ? (
         <IoReloadCircleOutline className="animate-spin" />
       ) : isFavorite ? (
