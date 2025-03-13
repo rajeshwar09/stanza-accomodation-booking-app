@@ -13,9 +13,9 @@ import { Separator } from "@/components/ui/separator";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
 
-const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const param = await params;
-  const property = await fetchPropertyDetails(param.id);
+const PropertyDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const resolvedParams = await params;
+  const property = await fetchPropertyDetails(resolvedParams.id);
 
   if (!property) redirect("/");
   

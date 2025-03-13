@@ -5,6 +5,7 @@ type PropertyRatingProps = {
   inPage: boolean;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PropertyRating = ({ propertyId, inPage }: PropertyRatingProps) => {
   //temp data
   const rating = 4.7;

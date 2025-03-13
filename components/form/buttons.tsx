@@ -14,7 +14,7 @@ type SubmitButtonProps = {
   size?: btnSize;
 };
 
-export const SubmitButton = ({
+const SubmitButton = ({
   className = "",
   text = "",
   size = "lg",
@@ -69,3 +69,5 @@ export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
     </Button>
   );
 };
+
+export default SubmitButton;
