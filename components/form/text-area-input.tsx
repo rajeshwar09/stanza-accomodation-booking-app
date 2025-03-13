@@ -17,7 +17,7 @@ const TextAreaInput = ({
     "Nestled in the serene hills of Darjeeling, this charming wooden cabin offers stunning Himalayan views and a peaceful retreat. Enjoy crisp mountain air, a private balcony, and modern comforts, all just a short drive from town. Perfect for couples and nature lovers seeking relaxation and scenic beauty.";
   return (
     <div>
-      <Label htmlFor={name} className="capitalize py-2">
+      <Label htmlFor={name} className="capitalize mb-2">
         {labelText || name}
       </Label>
       <Textarea

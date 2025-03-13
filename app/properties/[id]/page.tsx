@@ -9,6 +9,8 @@ import PropertyDetails from "@/components/properties/property-details";
 // import { DynamicMap } from "@/components/properties/property-map";
 import ShareButton from "@/components/properties/share-button";
 import UserInfo from "@/components/properties/user-info";
+import PropertyReviews from "@/components/reviews/property-reviews";
+import SumbitReview from "@/components/reviews/submit-review";
 import { Separator } from "@/components/ui/separator";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
@@ -52,6 +54,8 @@ const PropertyDetailsPage = async ({ params }: { params: Promise<{ id: string }>
           <BookingCalendar />
         </div>
       </section>
+      <SumbitReview propertyId={property.id} />
+      <PropertyReviews propertyId={property.id} />
     </section>
   );
 };
