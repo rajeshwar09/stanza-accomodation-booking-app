@@ -6,6 +6,7 @@ import BreadCrumbs from "@/components/properties/bread-crumbs";
 import Description from "@/components/properties/description";
 import ImageContainer from "@/components/properties/image-container";
 import PropertyDetails from "@/components/properties/property-details";
+// import { DynamicMap } from "@/components/properties/property-map";
 import ShareButton from "@/components/properties/share-button";
 import UserInfo from "@/components/properties/user-info";
 import { Separator } from "@/components/ui/separator";
@@ -13,8 +14,11 @@ import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
 
 const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const property = await fetchPropertyDetails(params.id);
+  const param = await params;
+  const property = await fetchPropertyDetails(param.id);
+
   if (!property) redirect("/");
+  
   const { bedrooms, baths, guests, beds } = property;
   const details = { bedrooms, baths, guests, beds };
   const firstName = property.profile.firstName;
@@ -42,6 +46,7 @@ const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
           <Separator className="mt-4" />
           <Description description={property.description} />
           <Amenities amenities={property.amenities} />
+          {/* <DynamicMap countryCode={property.country} /> */}
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
